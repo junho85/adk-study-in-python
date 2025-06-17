@@ -1,1 +1,2 @@
 google-adk
+protobuf~=6.31.1
