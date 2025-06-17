@@ -36,6 +36,9 @@ root_agent = Agent(
         2. Then, use "{refiner_agent}" to take those ideas to filter them for the provided budget.
         3. Present the final, refined list to the user along with the budget.
     """,
-    # sub_agents=[idea_agent, refiner_agent],
-    tools=[agent_tool.AgentTool(agent=idea_agent), agent_tool.AgentTool(agent=refiner_agent)],
+    # sub_agents=[idea_agent, refiner_agent], # {"error": "400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Tool use with function calling is unsupported', 'status': 'INVALID_ARGUMENT'}}"}
+    tools=[
+        agent_tool.AgentTool(agent=idea_agent),
+        agent_tool.AgentTool(agent=refiner_agent),
+    ],
 )
